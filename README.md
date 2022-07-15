@@ -6,7 +6,7 @@ A minimal red colorscheme for Vim.
 
 *Fira Code* font on light and dark backgrounds.
 
-![]()
+![](darkbg.png)
 ![]()
 
 ## Installation
