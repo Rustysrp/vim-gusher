@@ -1,6 +1,6 @@
-" Name:       paramount.vim
+" Name:       gusher.vim
 " Version:    0.1.0
-" Maintainer: github.com/owickstrom
+" Maintainer: github.com/Rustysrp
 " License:    The MIT License (MIT)
 "
 " A minimal colorscheme for Vim that only puts emphasis on the paramount.
@@ -32,7 +32,9 @@ let s:lightest_gray   = { "gui": "#EEEEEE", "cterm": "255" }
 let s:pink            = { "gui": "#fb007a", "cterm": "9"   }
 let s:dark_red        = { "gui": "#A22225", "cterm": "1"   }
 let s:light_red       = { "gui": "#FF5254", "cterm": "1"   }
-let s:orange          = { "gui": "#D75F5F", "cterm": "167" }
+let s:lighter_red     = { "gui": "#FB6C6D", "cterm": "1"   }
+let s:darkest_red     = { "gui": "#390000", "cterm": "167" }
+let s:lightest_red    = { "gui": "#FFE7E7", "cterm": "167" }
 let s:darker_blue     = { "gui": "#005F87", "cterm": "18"  }
 let s:dark_blue       = { "gui": "#008EC4", "cterm": "32"   }
 let s:blue            = { "gui": "#20BBFC", "cterm": "12"  }
@@ -53,13 +55,14 @@ if &background == "dark"
   let s:bg              = s:black
   let s:bg_subtle       = s:lighter_black
   let s:bg_very_subtle  = s:subtle_black
-  let s:norm            = s:white
+  let s:norm            = s:lightest_gray
   let s:norm_subtle     = s:light_gray
   let s:purple          = s:light_purple
   let s:cyan            = s:light_cyan
+  let s:struct          = s:lightest_red
   let s:green           = s:light_green
   let s:red             = s:light_red
-  let s:visual          = s:light_purple
+  let s:visual          = s:lighter_red
   let s:yellow          = s:light_yellow
 else
   let s:bg              = s:actual_white
@@ -69,6 +72,7 @@ else
   let s:norm_subtle     = s:medium_gray
   let s:purple          = s:dark_purple
   let s:cyan            = s:dark_cyan
+  let s:struct          = s:darkest_red
   let s:green           = s:dark_green
   let s:red             = s:dark_red
   let s:visual          = s:dark_purple
@@ -94,8 +98,8 @@ if &background != s:background
    execute "set background=" . s:background
 endif
 
-call s:h("Cursor",        {"bg": s:purple, "fg": s:norm })
-call s:h("Comment",       {"fg": s:bg_subtle, "gui": "italic"})
+call s:h("Cursor",        {"bg": s:red, "fg": s:norm })
+call s:h("Comment",       {"fg": s:bg_subtle, "cterm": "bold", "gui": "italic"})
 
 call s:h("Constant",      {"fg": s:red})
 hi! link Character        Constant
@@ -104,11 +108,10 @@ hi! link Boolean          Constant
 hi! link Float            Constant
 hi! link String           Constant
 
-"call s:h("Identifier",    {"fg": s:dark_blue})
 hi! link Identifier       Normal
 hi! link Function         Identifier
 
-call s:h("Statement",     {"fg": s:norm_subtle})
+call s:h("Statement",     {"fg": s:struct, "cterm": "bold", "gui": "bold"})
 hi! link Conditonal       Statement
 hi! link Repeat           Statement
 hi! link Label            Statement
@@ -123,7 +126,7 @@ hi! link Define           PreProc
 hi! link Macro            PreProc
 hi! link PreCondit        PreProc
 
-call s:h("Type",          {"fg": s:norm})
+call s:h("Type",          {"fg": s:visual, "cterm": "bold", "gui": "bold"})
 hi! link StorageClass     Type
 hi! link Structure        Type
 hi! link Typedef          Type
@@ -148,7 +151,7 @@ call s:h("Search",        {"bg": s:light_green, "fg": s:light_black})
 call s:h("MoreMsg",       {"fg": s:medium_gray, "cterm": "bold", "gui": "bold"})
 hi! link ModeMsg MoreMsg
 call s:h("LineNr",        {"fg": s:bg_subtle})
-call s:h("CursorLineNr",  {"fg": s:purple, "bg": s:bg_very_subtle})
+call s:h("CursorLineNr",  {"fg": s:red, "bg": s:bg_very_subtle})
 call s:h("Question",      {"fg": s:red})
 call s:h("StatusLine",    {"bg": s:bg_very_subtle})
 call s:h("StatusLineNC",  {"bg": s:bg_very_subtle, "fg": s:medium_gray})
@@ -180,7 +183,7 @@ else
 endif
 
 call s:h("Pmenu",         {"fg": s:norm, "bg": s:bg_subtle})
-call s:h("PmenuSel",      {"fg": s:norm, "bg": s:purple})
+call s:h("PmenuSel",      {"fg": s:norm, "bg": s:visual})
 call s:h("PmenuSbar",     {"fg": s:norm, "bg": s:bg_subtle})
 call s:h("PmenuThumb",    {"fg": s:norm, "bg": s:bg_subtle})
 call s:h("TabLine",       {"fg": s:norm, "bg": s:bg_very_subtle})
