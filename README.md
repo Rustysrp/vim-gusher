@@ -1,19 +1,18 @@
-# Paramount
+# Gusher
 
-A minimal colorscheme for Vim that only puts emphasis on the paramount.
+A minimal red colorscheme for Vim.
 
 ## Screenshots
 
-*Fira Code* font on light and dark backgrounds, with Ruby code from
-[VimColors](vimcolors.com/438/paramount/dark):
+*Fira Code* font on light and dark backgrounds.
 
-![](screenshots/light.png)
-![](screenshots/dark.png)
+![]()
+![]()
 
 ## Installation
 
 Copy the color scheme file to your `~/.vim/colors` directory, or use a plugin
-manager like [Plug][] or [Vundle][] and add `"owickstrom/vim-colors-paramount"`
+manager like [Plug][] or [Vundle][] and add `"Rustysrp/vim-gusher"`
 as a plugin.
 
 [vundle]: https://github.com/gmarik/Vundle.vim
@@ -22,14 +21,14 @@ as a plugin.
 ## Usage
 
 ```
-:colorscheme paramount
+:colorscheme gusher
 ```
 
 Supports both `background=light` and `background=dark`.
 
 ## Credits
 
-Based on the [pencil][] and [off][] colorschemes.
+Forked from the paramount color scheme. Based on the [pencil][] and [off][] colorschemes.
 
 [pencil]: https://github.com/reedes/vim-colors-pencil
 [off]: https://github.com/reedes/vim-colors-off
