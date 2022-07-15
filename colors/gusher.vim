@@ -30,8 +30,8 @@ let s:light_gray      = { "gui": "#A8A8A8", "cterm": "248" }
 let s:lighter_gray    = { "gui": "#C6C6C6", "cterm": "251" }
 let s:lightest_gray   = { "gui": "#EEEEEE", "cterm": "255" }
 let s:pink            = { "gui": "#fb007a", "cterm": "9"   }
-let s:dark_red        = { "gui": "#C30771", "cterm": "1"   }
-let s:light_red       = { "gui": "#E32791", "cterm": "1"   }
+let s:dark_red        = { "gui": "#A22225", "cterm": "1"   }
+let s:light_red       = { "gui": "#FF5254", "cterm": "1"   }
 let s:orange          = { "gui": "#D75F5F", "cterm": "167" }
 let s:darker_blue     = { "gui": "#005F87", "cterm": "18"  }
 let s:dark_blue       = { "gui": "#008EC4", "cterm": "32"   }
@@ -53,8 +53,8 @@ if &background == "dark"
   let s:bg              = s:black
   let s:bg_subtle       = s:lighter_black
   let s:bg_very_subtle  = s:subtle_black
-  let s:norm            = s:lighter_gray
-  let s:norm_subtle     = s:medium_gray
+  let s:norm            = s:white
+  let s:norm_subtle     = s:light_gray
   let s:purple          = s:light_purple
   let s:cyan            = s:light_cyan
   let s:green           = s:light_green
@@ -97,7 +97,7 @@ endif
 call s:h("Cursor",        {"bg": s:purple, "fg": s:norm })
 call s:h("Comment",       {"fg": s:bg_subtle, "gui": "italic"})
 
-call s:h("Constant",      {"fg": s:purple})
+call s:h("Constant",      {"fg": s:red})
 hi! link Character        Constant
 hi! link Number           Constant
 hi! link Boolean          Constant
@@ -117,7 +117,7 @@ hi! link Exception        Statement
 
 call s:h("Operator",      {"fg": s:norm, "cterm": "bold", "gui": "bold"})
 
-call s:h("PreProc",     {"fg": s:norm_subtle})
+call s:h("PreProc",     {"fg": s:norm_subtle, "cterm": "bold", "gui": "bold"})
 hi! link Include          PreProc
 hi! link Define           PreProc
 hi! link Macro            PreProc
